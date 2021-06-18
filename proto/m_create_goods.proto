@@ -1,0 +1,11 @@
+syntax="proto3";
+option go_package="github.com/JackTJC/backend/pb_gen";
+package goods;
+import "common.proto";
+
+message MCreateGoodsRequest{
+  repeated Goods goods_list = 1;
+}
+message MCreateGoodsResponse{
+  BaseResp base_resp = 1;
+}

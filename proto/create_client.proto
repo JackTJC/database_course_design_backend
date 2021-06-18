@@ -1,0 +1,12 @@
+syntax="proto3";
+option go_package="github.com/JackTJC/backend/pb_gen";
+package goods;
+import "common.proto";
+
+message CreateClientRequest{
+  Client client = 1;
+}
+
+message CreateClientResponse{
+  BaseResp base_resp = 1;
+}

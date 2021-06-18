@@ -1,0 +1,60 @@
+syntax="proto3";
+option go_package="github.com/JackTJC/backend/pb_gen";
+package goods;
+
+//商品类型
+enum GoodsType{
+  GoodsType_Unknown = 0;
+  GoodsType_Food = 1;//食品
+  GoodsType_Clothe = 2;//衣物
+  GoodsType_MobilePhone = 3;//手机
+  GoodsType_Desktop = 4;//笔记本电脑
+}
+//订单状态
+enum OrderStatus{
+  OrderStatus_Unknown = 0;
+  OrderStatus_WaitPay = 1;//待付款
+  OrderStatus_Paid = 2;//已付款
+  OrderStatus_WaitSend = 3;//待发货
+  OrderStatus_Sent = 4;//已发货
+  OrderStatus_Received = 5;//已收获
+}
+//状态码
+enum ErrNo{
+  ErrNo_Success = 0; //成功
+  ErrNo_Failed = 1;  //失败
+  ErrNo_Req_Illegal = 2;//请求参数非法
+  ErrNo_User_Has_Existed = 3;//用户已经存在
+}
+//response的基本信息
+message BaseResp{
+  ErrNo err_no = 1;
+  string msg = 2;
+}
+message Goods{
+  int32 goods_id = 1;
+  GoodsType goods_type = 2;
+  string goods_name = 3;
+  string goods_description = 4;
+  float price  = 5;
+  string picture_url = 6;
+  int32 discount = 7;
+  int32 inventory = 8;
+}
+
+message Client{
+  int32 client_id = 1;
+  string name = 2;
+  string tel = 3;
+  string passwd = 4;
+}
+
+message Order{
+  int32 order_id = 1;
+  int32 goods_id = 2;
+  int32 client_id = 3;
+  int32 num = 4;
+  OrderStatus order_status = 5;
+  string goods_name = 6;
+  float price= 7 ;
+}

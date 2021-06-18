@@ -1,0 +1,13 @@
+syntax="proto3";
+option go_package="github.com/JackTJC/backend/pb_gen";
+package goods;
+import "common.proto";
+
+message UpdateOrderStatusRequest{
+  int32  order_id = 1;
+  OrderStatus target_status = 2;
+}
+
+message UpdateOrderStatusResponse{
+  BaseResp base_resp = 1;
+}

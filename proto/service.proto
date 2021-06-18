@@ -1,0 +1,28 @@
+syntax="proto3";
+option go_package="github.com/JackTJC/backend/pb_gen";
+package goods;
+import "create_goods.proto";
+import "query_goods.proto";
+import "create_client.proto";
+import "query_client.proto";
+import "create_order.proto";
+import "query_order.proto";
+import "m_create_goods.proto";
+
+
+service GoodsInfoAdmin{
+  //创建商品
+  rpc CreateGoods(CreateGoodsRequest) returns(CreateGoodsResponse){}
+  //查询商品
+  rpc QueryGoods(QueryGoodsRequest) returns (QueryGoodsResponse){}
+  //创建客户
+  rpc CreateClient(CreateClientRequest) returns(CreateClientResponse){}
+  //查询客户
+  rpc QueryClient(QueryClientRequest) returns(QueryClientResponse){}
+  //创建订单
+  rpc CreateOrder(CreateOrderRequest)returns (CreateOrderResponse){}
+  //查询订单
+  rpc QueryOrder(QueryOrderRequest) returns(QueryOrderResponse){}
+  //批量创建商品
+  rpc MCreateGoods(MCreateGoodsRequest) returns(MCreateGoodsResponse){}
+}

@@ -1,0 +1,11 @@
+server:
+  port: 8888
+mysql:
+  user_name: root
+  passwd: "!Tjc1962370203"
+  host: localhost
+  port: 3306
+  database: course_design
+redis:
+  host: localhost
+  port: 6379

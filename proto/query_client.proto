@@ -1,0 +1,17 @@
+syntax="proto3";
+option go_package="github.com/JackTJC/backend/pb_gen";
+package goods;
+import "common.proto";
+
+
+message QueryClientRequest{
+  int32 id = 1;
+  string tel = 2;
+  int32 offset = 3;
+  int32  limit = 4;
+}
+
+message QueryClientResponse{
+  BaseResp base_resp = 1;
+  repeated Client client_list = 2;
+}

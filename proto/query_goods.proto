@@ -1,0 +1,20 @@
+syntax="proto3";
+option go_package="github.com/JackTJC/backend/pb_gen";
+package goods;
+import "common.proto";
+
+message QueryGoodsRequest{
+    int32 id  = 1;
+    GoodsType goods_type = 2;
+    string name = 3;
+    string description = 4;
+    int32 price_low = 5;
+    int32 price_high = 6;
+    int32 offset = 7;
+    int32 limit = 8;
+}
+
+message QueryGoodsResponse{
+  BaseResp base_resp = 1;
+  repeated Goods goods_list = 2;
+}
